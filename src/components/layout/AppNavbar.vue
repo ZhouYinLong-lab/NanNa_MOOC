@@ -2,7 +2,8 @@
   <nav class="navbar">
     <div class="navbar-left">
       <router-link to="/" class="navbar-brand">
-        🎓 南哪MOOC
+        <img src="/logo.png" alt="南哪MOOC" class="brand-logo" />
+        <span>南哪MOOC</span>
       </router-link>
       <div class="navbar-links" v-if="isLoggedIn">
         <router-link to="/courses" class="nav-link">课程</router-link>
@@ -194,10 +195,20 @@ onUnmounted(() => {
 }
 
 .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
+}
+
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
 }
 
 .navbar-links {
